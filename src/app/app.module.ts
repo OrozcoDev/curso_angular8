@@ -14,6 +14,8 @@ import { ListComponent } from './components/list/list.component';
 import { FibonacciPipe } from './pipes/fibonacci.pipe';
 import { HighlinghtDirective } from './directives/highlinght.directive';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { UserListComponent } from './components/user-list/user-list.component';
     ListComponent,
     FibonacciPipe,
     HighlinghtDirective,
-    UserListComponent
+    UserListComponent,
+    TodoListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
