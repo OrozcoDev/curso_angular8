@@ -6,12 +6,30 @@ import { Todo } from '../models/todo.model';
   providedIn: 'root'
 })
 export class TodoService {
+  
+  path = 'https://jsonplaceholder.typicode.com/todos'
+
 
   constructor(private http: HttpClient) {
 
    }
 
    getAllTodos(){
-    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
+    return this.http.get<Todo[]>(this.path);
    }
+
+  createTodo(todo: Todo){
+    return this.http.post<Todo>(this.path,todo);
+  }
+
+  deleteTodo(todoId: string){
+    const url = `${this.path}/${todoId}`;
+    return this.http.delete(url)
+  }
+
+  updateTodo(todo: Todo){
+    const url = `${this.path}/${todo.id}`;
+    return this.http.put<Todo>(url, todo);
+  }
+
 }
